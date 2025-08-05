@@ -9,7 +9,7 @@ const Home = () => {
       <RevealOnScroll>
         <div className="text-center z-10 px-4">
           <h1 className="text-5xl md:text-7xl font-bold pb-2 mb-6 bg-gradient-to-r from-[#4E65FF] to-[#92EFFD] bg-clip-text text-transparent leading-right">
-            Hi, I am Tanmay Bhatgare
+            Hi, I am Tanmay Bhatgare(Testing)
           </h1>
           <p className="text-gray-400 text-xl mb-8 max-w-lg mx-auto">
             I'm a 19-year-old full-stack developer passionate about building
