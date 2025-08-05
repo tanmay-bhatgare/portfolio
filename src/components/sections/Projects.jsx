@@ -34,6 +34,7 @@ const Projects = () => {
                 "FastAPI",
                 "PostgreSQL",
                 "SQLAlchemy",
+                "Pydantic",
                 "Redis",
                 "Oauth2",
                 "React",

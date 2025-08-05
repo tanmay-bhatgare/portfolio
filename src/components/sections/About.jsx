@@ -1,21 +1,23 @@
 import React from "react";
 import RevealOnScroll from "../RevealOnScroll";
+import SkillSlider from "../SkillSlider";
 
 const About = () => {
   const frontendSkills = [
-    "React",
-    "React Native",
-    "JavaScript",
-    "TailwindCSS",
-    "Bootstrap",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg",
   ];
+
   const backendSkills = [
-    "Python",
-    "FastAPI",
-    "PostgreSQL",
-    "Redis",
-    "MongoDB",
-    "SQLAlchemy",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-plain-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original-wordmark.svg",
   ];
   return (
     <section
@@ -34,31 +36,13 @@ const About = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold mb-1">Frontend</h3>
+                <SkillSlider images={frontendSkills} />
               </div>
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+              <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <SkillSlider images={backendSkills} />
               </div>
             </div>
           </div>
