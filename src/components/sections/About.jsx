@@ -53,8 +53,7 @@ const About = () => {
               </h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li className="">
-                  <strong>B.Tech In Information Technology</strong> - P.E.S
-                  Modern College of Engineering (2025-2029)
+                  <strong>B.Tech In Computer Science</strong> - G.H Raisoni College of Engineering, Nagpur (2025-2029)
                 </li>
                 <li className="">
                   Relevant Coursework: Backend development and Web Development
