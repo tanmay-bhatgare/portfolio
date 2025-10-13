@@ -12,8 +12,6 @@ on:
       - main
     paths-ignore:
       - "public/portfolio.json"
-    paths:
-      - "scripts/fetch_portfolio.py"
 
 jobs:
   update-json:
