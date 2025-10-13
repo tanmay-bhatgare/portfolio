@@ -22,5 +22,19 @@
     ],
     "github": "https://www.github.com/tanmay-bhatgare/my-own-tab",
     "featured": true
+  },
+  {
+    "name": "Pizza App Backend",
+    "description": "A fully integrated API system, managing CRUD operations, database and caching with redis",
+    "tech": [
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Redis",
+      "OAuth2",
+      "Pydantic"
+    ],
+    "github": "https://www.github.com/tanmay-bhatgare/pizza-app-backend",
+    "featured": true
   }
 ]
