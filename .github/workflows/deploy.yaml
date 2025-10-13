@@ -8,7 +8,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
     steps:
       # 1️⃣ Checkout repo
       - uses: actions/checkout@v4
@@ -29,5 +32,6 @@ jobs:
       # 5️⃣ Deploy to GitHub Pages
       - uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
           personal_token: ${{ secrets.GH_PAT }} # <-- key part
           publish_dir: ./dist
