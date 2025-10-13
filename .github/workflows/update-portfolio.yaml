@@ -1,0 +1,59 @@
+name: Update Portfolio JSON
+
+on:
+  # Runs automatically every 12 hours
+  schedule:
+    - cron: "0 */12 * * *"
+  # Manual trigger
+  workflow_dispatch:
+  # Trigger when script changes (but ignore JSON updates)
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "public/portfolio.json"
+    paths:
+      - "scripts/fetch_portfolio.py"
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3️⃣ Install uv
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      # 4️⃣ Install dependencies (simplified)
+      - name: Install project dependencies
+        run: uv pip install -r requirements.txt
+
+      # 5️⃣ Run your script
+      - name: Generate portfolio.json
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: uv run scripts/fetch_portfolio.py
+
+      # 6️⃣ Commit and push if there are changes
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [[ `git status --porcelain` ]]; then
+            git add public/portfolio.json
+            git commit -m "Update portfolio.json [auto]"
+            git push
+          else
+            echo "No changes detected. Skipping commit."
+          fi
