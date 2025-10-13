@@ -1,25 +1,26 @@
 [
   {
-    "name": "Task Manager Backend",
-    "description": "Scalable APIs integration with real-time updates and automated scaling.",
-    "tech": ["FastAPI", "PostgreSQL", "SQLAlchemy", "Redis", "Oauth2"],
-    "github": "https://www.github.com/tanmay-bhatgare/my-own-tab"
-  },
-  {
-    "name": "Fullstack Pizza App",
-    "description": "CRUD Operational APIs, user authentication and authorization, rate limiting and CORS middleware and many more with FastAPI for Backend. React, Zustand and TanstackQuery for frontend with perfect state management and caching.",
+    "name": "Pizza App",
+    "description": "Full-stack pizza ordering app built with FastAPI & React.",
     "tech": [
       "FastAPI",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Pydantic",
-      "Redis",
-      "Oauth2",
       "React",
-      "Zustand",
-      "Tanstack",
-      "TailwindCSS"
+      "Tailwind",
+      "Zustand"
     ],
-    "github": "https://github.com/tanmay-bhatgare/pizza-app-backend"
+    "github": "https://www.github.com/tanmay-bhatgare/my-own-tab",
+    "featured": true
+  },
+  {
+    "name": "My Own Tab",
+    "description": "A Minimal & Productive Chrome New Tab Extension Built For Devs By Devs",
+    "tech": [
+      "React",
+      "Tailwindcss",
+      "Chrome Extension",
+      "React Context Management"
+    ],
+    "github": "https://www.github.com/tanmay-bhatgare/my-own-tab",
+    "featured": true
   }
 ]
