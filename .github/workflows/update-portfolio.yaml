@@ -28,26 +28,24 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 3️⃣ Install uv
-      - name: Install uv
-        uses: astral-sh/setup-uv@v6
-
-      # 4️⃣ Install dependencies
+      # 3️⃣ Install dependencies
       - name: Install project dependencies
         run: |
           python -m venv automation/.venv
-          python -m pip install --upgrade pip
+          automation/.venv/bin/pip install --upgrade pip
           automation/.venv/bin/pip install -r automation/requirements.txt
 
-      # 5️⃣ Run your script
+      # 4️⃣ Run your script
       - name: Generate portfolio.json
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          source automation/.venv/bin/activate
-          python automation/main.py
+          # Ensure we're in repo root
+          cd automation
+          ../.venv/bin/python main.py
+          cd ..
 
-      # 6️⃣ Commit and push if there are changes
+      # 5️⃣ Commit and push changes using GH_PAT
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -61,6 +59,7 @@ jobs:
             echo "No changes detected. Skipping commit."
           else
             git commit -m "Update portfolio.json [auto]"
-            git push https://x-access-token:${GH_PAT}@github.com/tanmay-bhatgare/portfolio.git HEAD:main
+            # Use PAT for push
+            git remote set-url origin https://x-access-token:${GH_PAT}@github.com/tanmay-bhatgare/portfolio.git
+            git push origin HEAD:main
           fi
-
