@@ -1,9 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - github-pages # 👈 change if your default branch is "master"
+  workflow_run:
+    workflows: ["Update Portfolio JSON"]
+    types:
+      - completed
 
 permissions:
   contents: read
