@@ -45,8 +45,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          source .venv/source/activate
-          uv run automation/main.py
+          ls -a
 
       # 6️⃣ Commit and push if there are changes
       - name: Commit and push changes
