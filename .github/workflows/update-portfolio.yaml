@@ -44,7 +44,7 @@ jobs:
       - name: Generate portfolio.json
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-        run: uv run scripts/fetch_portfolio.py
+        run: uv run automation/main.py
 
       # 6️⃣ Commit and push if there are changes
       - name: Commit and push changes
