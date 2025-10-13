@@ -9,13 +9,13 @@ const ProjectTile = ({ title, subtitle, skills = [], projectHref }) => {
         {skills.map((skill, idx) => (
           <span
             key={idx}
-            className="h-auto bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
+            className="h-fit bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
           >
             {skill}
           </span>
         ))}
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex items-center">
         <a
           href={projectHref}
           target="_blank"

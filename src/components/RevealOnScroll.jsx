@@ -4,6 +4,8 @@ const RevealOnScroll = ({ children }) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    const tempScrollRef = scrollRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,8 +20,8 @@ const RevealOnScroll = ({ children }) => {
     }
 
     return () => {
-      if (scrollRef.current) {
-        observer.unobserve(scrollRef.current);
+      if (tempScrollRef) {
+        observer.unobserve(tempScrollRef);
       }
     };
   }, []);
