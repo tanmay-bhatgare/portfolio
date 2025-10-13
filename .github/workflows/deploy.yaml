@@ -5,33 +5,41 @@ on:
     branches:
       - main # deploy when main updates
 
+# Grant the necessary permissions at the job level
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      pages: write
-      id-token: write
-      contents: read
+      contents: write # Needed for actions/checkout and committing
+      pages: write # Needed to deploy to GitHub Pages
+      id-token: write # Needed for the OIDC token used by deploy-pages
+
     steps:
       # 1️⃣ Checkout repo
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }} # ensures all git ops are authenticated
+          # Use the default GITHUB_TOKEN here. The permissions block above grants write access.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # This action doesn't require a special PAT for checkout
 
       # 2️⃣ Setup Node.js
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       # 3️⃣ Install dependencies
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
       # 4️⃣ Build Vite/React project
-      - run: npm run build
+      - name: Build project
+        run: npm run build
 
       # 5️⃣ Deploy to GitHub Pages
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          personal_token: ${{ secrets.GH_PAT }} # <-- key part
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
