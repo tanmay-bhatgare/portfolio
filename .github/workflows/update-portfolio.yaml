@@ -37,8 +37,8 @@ jobs:
         run: |
           cd automation
           uv venv .venv
-          uv pip install --upgrade pip
-          uv pip install -r requirements.txt
+          uv add -r requirements.txt
+
 
       # 5️⃣ Run your script
       - name: Generate portfolio.json
