@@ -34,7 +34,9 @@ jobs:
 
       # 4️⃣ Install dependencies (simplified)
       - name: Install project dependencies
-        run: uv pip install -r requirements.txt
+        run: |
+          cd automation
+          uv pip install -r requirements.txt
 
       # 5️⃣ Run your script
       - name: Generate portfolio.json
