@@ -53,10 +53,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if [[ `git status --porcelain` ]]; then
-            git add public/portfolio.json
+          git add public/portfolio.json
+
+          if git diff --cached --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
             git commit -m "Update portfolio.json [auto]"
             git push
-          else
-            echo "No changes detected. Skipping commit."
           fi
