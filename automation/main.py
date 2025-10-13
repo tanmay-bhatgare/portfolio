@@ -17,7 +17,8 @@ HEADERS = {
     "Authorization": f"token {PAT_TOKEN}",
     "Accept": "application/vnd.github.v3+json",
 }
-OUTPUT_DIR = Path("../public")
+# current dir is automation/, so ..
+OUTPUT_DIR = Path(__file__).parent.parent / "public"
 
 
 def ensure_file(path: Path) -> Path:
