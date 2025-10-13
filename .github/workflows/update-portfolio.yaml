@@ -45,6 +45,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          cd automation
           ls -a
 
       # 6️⃣ Commit and push if there are changes
