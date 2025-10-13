@@ -28,24 +28,26 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 3️⃣ Install dependencies
+      # 3️⃣ Install uv
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      # 4️⃣ Install dependencies
       - name: Install project dependencies
         run: |
           python -m venv automation/.venv
-          automation/.venv/bin/pip install --upgrade pip
+          python -m pip install --upgrade pip
           automation/.venv/bin/pip install -r automation/requirements.txt
 
-      # 4️⃣ Run your script
+      # 5️⃣ Run your script
       - name: Generate portfolio.json
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Ensure we're in repo root
-          cd automation
-          ../.venv/bin/python main.py
-          cd ..
+          source automation/.venv/bin/activate
+          python automation/main.py
 
-      # 5️⃣ Commit and push changes using GH_PAT
+      # 6️⃣ Commit and push if there are changes
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -65,4 +67,3 @@ jobs:
             # Use GH_PAT to authenticate the push
             git push https://x-access-token:${GH_PAT}@github.com/tanmay-bhatgare/portfolio.git HEAD:main
           fi
-
