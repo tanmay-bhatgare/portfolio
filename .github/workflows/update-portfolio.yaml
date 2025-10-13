@@ -35,8 +35,9 @@ jobs:
       # 4️⃣ Install dependencies
       - name: Install project dependencies
         run: |
-          uv venv automation/.venv
-          uv pip install -r automation/requirements.txt
+          python -m venv automation/.venv
+          python -m pip install --upgrade pip
+          automation/.venv/bin/pip install -r automation/requirements.txt
 
       # 5️⃣ Run your script
       - name: Generate portfolio.json
