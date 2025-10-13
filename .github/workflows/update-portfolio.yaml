@@ -36,6 +36,8 @@ jobs:
       - name: Install project dependencies
         run: |
           cd automation
+          uv venv .venv
+          uv pip install --upgrade pip
           uv pip install -r requirements.txt
 
       # 5️⃣ Run your script
