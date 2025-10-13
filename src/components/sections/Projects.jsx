@@ -6,9 +6,9 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/portfolio.json")
-      .then((res) => res.json())
-      .then((data) => setProjects(data))
+    fetch(`${import.meta.env.BASE_URL}/portfolio.json`)
+      .then((res) => res.text())
+      .then((data) => setProjects(JSON.parse(data)))
       .catch((err) => {
         console.error("unable to load projects", err);
       });

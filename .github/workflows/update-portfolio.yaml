@@ -12,6 +12,8 @@ on:
       - main
     paths-ignore:
       - "public/portfolio.json"
+permissions:
+  contents: write
 
 jobs:
   update-json:
