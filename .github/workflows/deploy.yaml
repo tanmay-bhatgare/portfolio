@@ -1,6 +1,11 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_run:
+    workflows: ["Update Portfolio JSON"] # 👈 Exact name of your first workflow
+    types:
+      - completed
+
   push:
     branches:
       - main # deploy when main updates
