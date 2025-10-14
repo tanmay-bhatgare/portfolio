@@ -1,17 +1,5 @@
 [
   {
-    "name": "Pizza App",
-    "description": "Full-stack pizza ordering app built with FastAPI & React.",
-    "tech": [
-      "FastAPI",
-      "React",
-      "Tailwind",
-      "Zustand"
-    ],
-    "github": "https://www.github.com/tanmay-bhatgare/my-own-tab",
-    "featured": true
-  },
-  {
     "name": "My Own Tab",
     "description": "A Minimal & Productive Chrome New Tab Extension Built For Devs By Devs",
     "tech": [
