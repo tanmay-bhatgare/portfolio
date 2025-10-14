@@ -1,9 +1,6 @@
 name: Update Portfolio JSON
 
 on:
-  # Runs automatically every 12 hours
-  schedule:
-    - cron: "0 */12 * * *"
   # Manual trigger
   workflow_dispatch:
   # Trigger when script changes (but ignore JSON updates)
