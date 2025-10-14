@@ -36,5 +36,17 @@
     ],
     "github": "https://www.github.com/tanmay-bhatgare/pizza-app-backend",
     "featured": true
+  },
+  {
+    "name": "Pizza App Frontend",
+    "description": "A fully featured smooth UI based Pizza Frontend App. Built on top of React and powered by TanStack Query and Zustand for State Management.",
+    "tech": [
+      "React",
+      "Zustand",
+      "TanStack",
+      "Tailwindcss"
+    ],
+    "github": "https://www.github.com/tanmay-bhatgare/pizza-app-frontend",
+    "featured": true
   }
 ]
