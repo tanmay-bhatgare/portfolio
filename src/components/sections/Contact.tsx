@@ -1,6 +1,6 @@
 import emailjs from "emailjs-com";
 import RevealOnScroll from "../RevealOnScroll";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
   const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
@@ -9,17 +9,18 @@ const Contact = () => {
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.currentTarget, PUBLIC_KEY)
       .then(() => {
-        alert("Message Sent!.");
+        alert("Message Sent!");
         setForm({ name: "", email: "", message: "" });
       })
       .catch(() => alert("Oops! Something went wrong. Please try again."));
   };
+
   return (
     <section
       id="contact"

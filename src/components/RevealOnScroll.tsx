@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
-const RevealOnScroll = ({ children }) => {
-  const scrollRef = useRef(null);
+const RevealOnScroll = ({ children }: { children: React.ReactNode }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tempScrollRef = scrollRef.current;
@@ -9,7 +9,9 @@ const RevealOnScroll = ({ children }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          scrollRef.current.classList.add("visible");
+          if (scrollRef && scrollRef.current) {
+            scrollRef.current.classList.add("visible");
+          }
         }
       },
       { threshold: 0.3, rootMargin: "0px 0px -50px 0px" }

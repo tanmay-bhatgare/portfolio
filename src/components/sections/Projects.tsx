@@ -2,8 +2,15 @@ import { useEffect, useState } from "react";
 import ProjectTile from "../ProjectTile";
 import RevealOnScroll from "../RevealOnScroll";
 
+type ProjectType = {
+  name: string;
+  description: string;
+  tech: string[];
+  github: string;
+};
+
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<ProjectType[]>([]);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}/portfolio.json`)

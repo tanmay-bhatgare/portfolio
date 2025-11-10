@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const LoadingScreen = ({ onComplete }) => {
+export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [text, setText] = useState("");
   const fullText = "self.portfolio()";
 

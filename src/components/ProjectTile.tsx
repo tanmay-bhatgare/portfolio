@@ -1,6 +1,16 @@
 import React from "react";
 
-const ProjectTile = ({ title, subtitle, skills = [], projectHref }) => {
+const ProjectTile = ({
+  title,
+  subtitle,
+  skills,
+  projectHref,
+}: {
+  title: string;
+  subtitle: string;
+  skills: string[];
+  projectHref: string;
+}) => {
   return (
     <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>

@@ -1,4 +1,4 @@
-export default function SkillSlider({ images = [] }) {
+export default function SkillSlider({ images }: { images: string[] }) {
   return (
     <div className="w-full overflow-x-auto">
       <div className="flex space-x-4 px-4 py-6 snap-x snap-mandatory overflow-x-auto">

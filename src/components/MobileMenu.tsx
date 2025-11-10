@@ -1,6 +1,12 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
-export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+export const MobileMenu = ({
+  menuOpen,
+  setMenuOpen,
+}: {
+  menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
