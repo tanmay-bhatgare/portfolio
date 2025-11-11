@@ -19,7 +19,7 @@ const Projects = () => {
       .catch((err) => {
         console.error("unable to load projects", err);
       });
-  });
+  }, []);
 
   return (
     <section
