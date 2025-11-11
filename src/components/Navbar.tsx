@@ -8,6 +8,8 @@ export const Navbar = ({
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   useEffect(() => {
+
+    
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
   return (
@@ -33,16 +35,22 @@ export const Navbar = ({
               Home
             </a>
             <a
+              href="#about"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              About
+            </a>
+            <a
               href="#projects"
               className="text-gray-300 hover:text-white transition-colors"
             >
               Projects
             </a>
             <a
-              href="#about"
+              href="#socials"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              About
+              Socials
             </a>
             <a
               href="#contact"
