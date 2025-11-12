@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="100" height="100">
+    <defs>
+        <style>.a{fill:#1dbf73;}.b{fill:#fff;}</style>
+    </defs>
+    <!-- Move the main green circle to the center -->
+    <circle class="a" cx="320" cy="320" r="254.01" />
+    <!-- Adjust white parts accordingly -->
+    <circle class="b" cx="381.96" cy="228.18" r="26.87" />
+    <path class="b"
+        d="M345.87,207.66h-123V199.6c0-15.83,15.83-16.13,23.89-16.13,9.25,0,13.44.9,13.44.9v-43.6a155.21,155.21,0,0,0-19.71-1.19c-25.68,0-73.16,7.16-73.16,61.51V208h-22.4v40.31h22.4v85.1h-20.9v40.31H247.34V333.37H222.85v-85.1H290v85.1H269.13v40.31h97.65V333.37H345.87Z"
+        transform="translate(64.16 65.01)" />
+</svg>

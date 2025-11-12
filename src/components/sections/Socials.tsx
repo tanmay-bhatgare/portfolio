@@ -3,6 +3,7 @@ import RevealOnScroll from "../RevealOnScroll";
 import instagram from "../../assets/instagram.svg";
 import linkedin from "../../assets/linkedin.svg";
 import github from "../../assets/github.svg";
+import fiverr from "../../assets/fiverr.svg";
 
 const cards = [
   {
@@ -10,7 +11,7 @@ const cards = [
     title: "Instagram",
     image: instagram,
     content:
-      "Follow me on Instagram for my social updates and enjoy my fun content",
+      "Follow me on Instagram for my social updates and enjoy my fun content.",
     href: "https://www.instagram.com/tanmaybhatgare",
   },
   {
@@ -28,6 +29,14 @@ const cards = [
     content:
       "Follow me on Github for my project and open source contribution updates!",
     href: "https://www.github.com/tanmay-bhatgare",
+  },
+  {
+    id: 4,
+    title: "Fiverr",
+    image: fiverr,
+    content:
+      "Have a project in mind? Follow me on Fiverr and let me handle it for you.",
+    href: "https://www.fiverr.com/tanmaybhatgare",
   },
 ];
 
@@ -70,7 +79,7 @@ const Socials = () => {
                 return (
                   <div
                     key={card.id}
-                    className={`absolute h-full transition-all duration-500 ease-in-out transform 
+                    className={`absolute h-full transition-all duration-500 ease-in-out transform flex flex-col items-center justify-center
                       ${
                         isActive
                           ? "scale-100 opacity-100 z-10"
@@ -84,11 +93,11 @@ const Socials = () => {
                     }}
                   >
                     {/* Glassy Card */}
-                    <div className="w-[300px] h-full md:h-[80%] p-6 rounded-xl border-[1.5px] text-white border-white/20 backdrop-blur-lg backdrop-saturate-150 shadow-xl flex flex-col items-center overflow-y-auto no-scrollbar">
+                    <div className="w-[300px] h-full md:h-[80%] p-6 rounded-xl border-2 text-white border-white/10 backdrop-blur-lg backdrop-saturate-150 shadow-xl flex flex-col items-center overflow-y-auto no-scrollbar">
                       <h3 className="text-4xl font-bold mb-2 text-white drop-shadow">
                         {card.title}
                       </h3>
-                      <img src={card.image} alt={card.title} className="w-40" />
+                      <img src={card.image} alt={card.title} className="w-40 aspect-square" />
                       <p className="text-center">- {card.content}</p>
 
                       <a href={card.href} target="_blank" className="py-14">
