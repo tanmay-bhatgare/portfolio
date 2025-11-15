@@ -1,3 +1,5 @@
+import EditorScreen from "../Editor";
+import OutputScreen from "../Output";
 import RevealOnScroll from "../RevealOnScroll";
 import SkillSlider from "../SkillSlider";
 
@@ -35,15 +37,18 @@ const About = () => {
               applications and creating innovative solutions.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
+            <div className="grid grid-cols-1 gap-6">
+              <OutputScreen />
+              <EditorScreen />
+              {/* <EditorScreen /> */}
+              {/* <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-1">Frontend</h3>
                 <SkillSlider images={frontendSkills} />
               </div>
               <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Backend</h3>
                 <SkillSlider images={backendSkills} />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
