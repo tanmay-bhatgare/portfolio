@@ -7,16 +7,16 @@ const EditorScreen = () => {
   const [lines, setLines] = useState([
     {
       id: 1,
-      text: `self.skills.backend.append(${backendSkills
-        .map((e) => `"${e}"`)
+      text: `self.skills.backend.append(${Object.entries(backendSkills)
+        .map(([name, icon]) => `"${name}"`)
         .join(", ")})`,
       unlocked: true,
       restartKey: 0,
     },
     {
       id: 2,
-      text: `self.skills.frontend.append(${frontendSkills
-        .map((e) => `"${e}"`)
+      text: `self.skills.frontend.append(${Object.entries(frontendSkills)
+        .map(([name, icon]) => `"${name}"`)
         .join(", ")})`,
       unlocked: false,
       restartKey: 0,

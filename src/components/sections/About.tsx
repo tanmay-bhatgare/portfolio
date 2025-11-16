@@ -1,25 +1,7 @@
 import EditorScreen from "../Editor";
 import OutputScreen from "../Output";
 import RevealOnScroll from "../RevealOnScroll";
-import SkillSlider from "../SkillSlider";
 
-const frontendSkills = [
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg",
-];
-
-const backendSkills = [
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-plain-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original-wordmark.svg",
-];
 const About = () => {
   return (
     <section
@@ -40,15 +22,6 @@ const About = () => {
             <div className="grid grid-cols-1 gap-6">
               <OutputScreen />
               <EditorScreen />
-              {/* <EditorScreen /> */}
-              {/* <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-1">Frontend</h3>
-                <SkillSlider images={frontendSkills} />
-              </div>
-              <div className="rounded-xl px-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">Backend</h3>
-                <SkillSlider images={backendSkills} />
-              </div> */}
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">

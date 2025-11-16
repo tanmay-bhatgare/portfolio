@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { backendSkills, frontendSkills } from "../constants";
 import { useAnimationStore } from "../store/useAnimationStore";
 import { useTypeWriterStore } from "../store/useTypewriterStore";
+import errorImg from "../assets/error.svg";
 
 const fade = {
   hidden: { opacity: 0, y: 8 },
@@ -30,34 +31,50 @@ const OutputScreen = () => {
       <div className="w-full flex flex-col gap-2 mb-3">
         <span className="text-lg">Backend</span>
         <div className="w-full grid grid-flow-col auto-cols-max gap-3 rounded-lg border border-white/10 overflow-x-auto py-4 px-2 no-scrollbar">
-          {backendSkills.map((item, i) => (
-            <motion.span
+          {Object.entries(backendSkills).map(([name, icon], i) => (
+            <motion.div
               key={i}
               variants={fade}
               initial="hidden"
-              animate={animateBackend ? "visible" : "hidden"}
+              animate={animateFrontend ? "visible" : "hidden"}
               transition={{ delay: i * 0.05 }}
-              className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition"
+              className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition flex items-center justify-center gap-1"
             >
-              {item}
-            </motion.span>
+              <img
+                src={icon}
+                alt={name}
+                className="w-8  aspect-square"
+                onError={(e) => {
+                  e.currentTarget.src = errorImg;
+                }}
+              />
+              <span className="">{name}</span>
+            </motion.div>
           ))}
         </div>
       </div>
       <div className="w-full flex flex-col gap-2">
         <span className="text-lg">Frontend</span>
         <div className="w-full grid grid-flow-col auto-cols-max gap-3 rounded-lg border border-white/10 overflow-x-auto py-4 px-2 no-scrollbar">
-          {frontendSkills.map((item, i) => (
-            <motion.span
+          {Object.entries(frontendSkills).map(([name, icon], i) => (
+            <motion.div
               key={i}
               variants={fade}
               initial="hidden"
               animate={animateFrontend ? "visible" : "hidden"}
               transition={{ delay: i * 0.05 }}
-              className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition"
+              className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition flex items-center justify-center gap-1"
             >
-              {item}
-            </motion.span>
+              <img
+                src={icon}
+                alt={name}
+                className="w-8  aspect-square"
+                onError={(e) => {
+                  e.currentTarget.src = errorImg;
+                }}
+              />
+              <span className="">{name}</span>
+            </motion.div>
           ))}
         </div>
       </div>
