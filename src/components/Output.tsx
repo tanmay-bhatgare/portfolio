@@ -36,7 +36,7 @@ const OutputScreen = () => {
               key={i}
               variants={fade}
               initial="hidden"
-              animate={animateFrontend ? "visible" : "hidden"}
+              animate={animateBackend ? "visible" : "hidden"}
               transition={{ delay: i * 0.05 }}
               className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition flex items-center justify-center gap-1"
             >
