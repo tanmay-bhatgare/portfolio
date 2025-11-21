@@ -12,6 +12,20 @@
     "featured": true
   },
   {
+    "name": "NASA Space App",
+    "description": "A Weather Forecasting App, a part of NASA Space App Hackathon. It was the project of Team Orion.",
+    "tech": [
+      "React",
+      "Typescript",
+      "Tailwindcss",
+      "External APIs",
+      "Google GenAI",
+      ""
+    ],
+    "github": "https://www.github.com/tanmay-bhatgare/nasa-spaceapp",
+    "featured": true
+  },
+  {
     "name": "Pizza App Backend",
     "description": "A fully integrated API system, managing CRUD operations, database and caching with redis",
     "tech": [
