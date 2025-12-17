@@ -6,7 +6,7 @@ import { MobileMenu } from "./components/MobileMenu";
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
-import Contact from "./components/sections/Contact";
+// import Contact from "./components/sections/Contact";
 import Socials from "./components/sections/Socials";
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
         <About />
         <Socials />
         <Projects />
-        <Contact />
+        {/* <Contact /> */} {/* Removed due to security concerns regarding emailjs */}
       </div>
     </>
   );

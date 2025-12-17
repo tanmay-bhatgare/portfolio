@@ -52,12 +52,12 @@ export const Navbar = ({
             >
               Socials
             </a>
-            <a
+            {/* <a
               href="#contact"
               className="text-gray-300 hover:text-white transition-colors"
             >
               Contact
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -60,7 +60,7 @@ const EditorScreen = () => {
             <TypeWriter
               fullText={line.text}
               cursor="_"
-              typingSpeed={45}
+              typingSpeed={25}
               onComplete={() => handleComplete(i)}
             />
           </div>
