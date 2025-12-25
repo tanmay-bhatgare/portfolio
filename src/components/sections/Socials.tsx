@@ -57,7 +57,7 @@ const Socials = () => {
     >
       <RevealOnScroll>
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-center text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-center text-3xl font-bold mb-8 text-text">
             Socials
           </h2>
 
@@ -65,7 +65,7 @@ const Socials = () => {
             {/* Prev Button */}
             <button
               onClick={() => handleSlide("prev")}
-              className="absolute w-10 h-10 cursor-pointer flex flex-col items-center justify-center text-4xl left-0 z-100 p-3 bg-black text-white rounded-full border-2 border-white/10"
+              className="absolute w-10 h-10 cursor-pointer flex flex-col items-center justify-center text-4xl left-0 z-100 p-3 text-text rounded-full border-2 border-border"
             >
               ‹
             </button>
@@ -93,11 +93,15 @@ const Socials = () => {
                     }}
                   >
                     {/* Glassy Card */}
-                    <div className="w-[300px] h-full md:h-[80%] p-6 rounded-xl border-2 text-white border-white/10 backdrop-blur-lg backdrop-saturate-150 shadow-xl flex flex-col items-center overflow-y-auto no-scrollbar">
-                      <h3 className="text-4xl font-bold mb-2 text-white drop-shadow">
+                    <div className="w-[300px] h-full md:h-[80%] p-6 rounded-xl border-2 text-text border-border-muted shadow-xl flex flex-col items-center overflow-y-auto no-scrollbar">
+                      <h3 className="text-4xl font-bold mb-2 text-text drop-shadow">
                         {card.title}
                       </h3>
-                      <img src={card.image} alt={card.title} className="w-40 aspect-square" />
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="w-40 aspect-square"
+                      />
                       <p className="text-center">- {card.content}</p>
 
                       <a href={card.href} target="_blank" className="py-14">
@@ -114,7 +118,7 @@ const Socials = () => {
             {/* Next Button */}
             <button
               onClick={() => handleSlide("next")}
-              className="absolute w-10 h-10 cursor-pointer flex flex-col items-center justify-center text-4xl right-0 z-100 p-3 bg-black text-white rounded-full border-2 border-white/10"
+              className="absolute w-10 h-10 cursor-pointer flex flex-col items-center justify-center text-4xl right-0 z-100 p-3 text-text rounded-full border-2 border-border"
             >
               ›
             </button>

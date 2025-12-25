@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useTheme } from "../store/useTheme";
 
 export const MobileMenu = ({
   menuOpen,
@@ -7,6 +8,7 @@ export const MobileMenu = ({
   menuOpen: boolean;
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const { theme, toggleTheme } = useTheme();
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
@@ -61,15 +63,12 @@ export const MobileMenu = ({
       >
         Socials
       </a>
-      <a
-        href="#contact"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300 ${
-          menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-        }`}
+      <button
+        onClick={toggleTheme}
+        className="px-3 py-2 rounded border border-border text-text"
       >
-        Contact
-      </a>
+        {theme === "dark" ? "🌙" : "☀️"}
+      </button>
     </div>
   );
 };

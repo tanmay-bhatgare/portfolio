@@ -10,11 +10,11 @@ const About = () => {
     >
       <RevealOnScroll>
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-center text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to bg-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-center text-3xl font-bold mb-8 text-text">
             About Me
           </h2>
-          <div className="rounded-xl p-8 border border-white/10 hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
+          <div className="rounded-xl p-8 border border-border hover:-translate-y-1 transition-all">
+            <p className="text-text mb-6">
               Passionate developer with expertise in building scalable web
               applications and creating innovative solutions.
             </p>
@@ -25,11 +25,11 @@ const About = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+            <div className="text-text p-6 rounded-xl border-border border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4 text-center">
                 🎓Education
               </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <ul className="list-disc list-inside text-text space-y-2">
                 <li className="">
                   <strong>B.Tech In Computer Science</strong> - G.H Raisoni
                   College of Engineering, Nagpur (2025-2029)
@@ -39,11 +39,11 @@ const About = () => {
                 </li>
               </ul>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+            <div className="text-text p-6 rounded-xl border-border border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4 text-center">
                 🏢Work Experience
               </h3>
-              <div className="space-y-4 text-gray-300">
+              <div className="space-y-4 text-text ">
                 <div>
                   <h4 className="font-semibold">
                     FastAPI Developer (2019-present)

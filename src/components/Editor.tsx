@@ -42,7 +42,7 @@ const EditorScreen = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-white/5 border border-white/10 rounded-lg p-2 font-[JetBrains_Mono] font-semibold gap-3 text-sm md:text-lg">
+    <div className="w-full h-full flex flex-col bg-background-light/50 border border-border rounded-lg p-2 font-[JetBrains_Mono] font-semibold gap-3 text-text text-sm md:text-lg">
       <div className="w-full flex gap-1.5">
         <div className="bg-red-500/80 w-3 aspect-square rounded-full" />
         <div className="bg-yellow-500/80 w-3 aspect-square rounded-full" />

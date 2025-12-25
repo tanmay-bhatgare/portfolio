@@ -15,10 +15,10 @@ const OutputScreen = () => {
   const restartTyping = useTypeWriterStore((s) => s.restart);
 
   return (
-    <div className="w-full h-auto flex flex-col bg-white/5 border border-white/10 rounded-lg p-2 font-semibold text-sm md:text-lg">
+    <div className="w-full h-auto flex flex-col bg-background-light/50 border border-border-muted rounded-lg p-2 font-semibold text-sm md:text-lg">
       <div className="w-full flex px-2 justify-end">
         <button
-          className="px-2 py-1 bg-white/10 rounded-md"
+          className="px-2 py-1 text-text bg-background-light border border-border-muted rounded-md"
           onClick={() => {
             resetBackend();
             resetFrontend();
@@ -28,9 +28,9 @@ const OutputScreen = () => {
           Re-Start
         </button>
       </div>
-      <div className="w-full flex flex-col gap-2 mb-3">
+      <div className="w-full flex flex-col gap-2 mb-3 text-text">
         <span className="text-lg">Backend</span>
-        <div className="w-full grid grid-flow-col auto-cols-max gap-3 rounded-lg border border-white/10 overflow-x-auto py-4 px-2 no-scrollbar">
+        <div className="w-full grid grid-flow-col auto-cols-max gap-3 rounded-lg border border-border-muted overflow-x-auto py-4 px-2 no-scrollbar">
           {Object.entries(backendSkills).map(([name, icon], i) => (
             <motion.div
               key={i}
@@ -38,7 +38,7 @@ const OutputScreen = () => {
               initial="hidden"
               animate={animateBackend ? "visible" : "hidden"}
               transition={{ delay: i * 0.05 }}
-              className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition flex items-center justify-center gap-1"
+              className="border-2 border-border-muted text-text py-1 px-4 rounded-full whitespace-nowrap hover:bg-highlight/20 transition flex items-center justify-center gap-1"
             >
               <img
                 src={icon}
@@ -53,9 +53,9 @@ const OutputScreen = () => {
           ))}
         </div>
       </div>
-      <div className="w-full flex flex-col gap-2">
+      <div className="w-full flex flex-col gap-2 text-text">
         <span className="text-lg">Frontend</span>
-        <div className="w-full grid grid-flow-col auto-cols-max gap-3 rounded-lg border border-white/10 overflow-x-auto py-4 px-2 no-scrollbar">
+        <div className="w-full grid grid-flow-col auto-cols-max gap-3 rounded-lg border border-border-muted overflow-x-auto py-4 px-2 no-scrollbar">
           {Object.entries(frontendSkills).map(([name, icon], i) => (
             <motion.div
               key={i}
@@ -63,7 +63,7 @@ const OutputScreen = () => {
               initial="hidden"
               animate={animateFrontend ? "visible" : "hidden"}
               transition={{ delay: i * 0.05 }}
-              className="bg-blue-500/10 text-blue-500 py-1 px-4 rounded-full whitespace-nowrap hover:bg-blue-500/20 transition flex items-center justify-center gap-1"
+              className="border-2 border-border-muted text-text py-1 px-4 rounded-full whitespace-nowrap hover:bg-highlight/20 transition flex items-center justify-center gap-1"
             >
               <img
                 src={icon}
